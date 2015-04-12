@@ -1,0 +1,56 @@
+\documentclass[12pt, draft]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsfonts}
+\usepackage[fleqn]{amsmath}
+\usepackage[english,russian]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{cmap}
+
+\usepackage{lettrine} %% To make a Drop Cap
+\usepackage{yfonts} %% to make a fancy Gothic drop caps.
+
+\graphicspath{{./images/}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newcommand{\addref}[1]{\textbf{[\scalebox{.6}[1.0]{AddRef!}\;#1]}}
+
+\geometry{left=3cm}
+\geometry{right=1.5cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\begin{document}
+\renewcommand{\contentsname}{Оглавление}
+\renewcommand{\figurename}{Рис.}
+\renewcommand{\chaptername}{Глава}
+\renewcommand{\bibname}{Литература}
+
+\setlength{\parindent}{1cm}
+% \setstretch{1.5}
+
+\input title.tex
+\tableofcontents
+\newpage
+\input introduction.tex
+% \input lit_obzor.tex
+\input method.tex
+\input results.tex
+% \input inference.tex
+
+\addcontentsline{toc}{chapter}{Список литературы}
+
+\bibliographystyle{unsrt}
+\bibliography{base}
+\end{document}
