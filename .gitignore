@@ -1,3 +1,8 @@
+*.dep
+*~
+
+####Default GitHub .gitignore for LaTeX
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -124,3 +129,4 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
