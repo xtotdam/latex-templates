@@ -1,6 +1,7 @@
-\documentclass[12pt, draft]{report}
+\RequirePackage{snapshot}
+\documentclass[12pt]{report}
 \usepackage{cmap}
-\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsfonts}
 \usepackage[fleqn]{amsmath}
@@ -12,8 +13,18 @@
 \usepackage{setspace}
 \usepackage{lettrine} %% To make a Drop Cap
 \usepackage{yfonts} %% to make a fancy Gothic drop caps.
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{float}
 
-\graphicspath{{./images/}}
+\usepackage[sort&compress]{natbib}
+
+\usepackage[labelsep=period]{caption}
+
+\graphicspath{{./figures/}}
+
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
 
 \hypersetup{
     colorlinks,
@@ -23,7 +34,12 @@
     urlcolor=black
 }
 
-\newcommand{\addref}[1]{\textbf{[\scalebox{.6}[1.0]{AddRef!}\;#1]}}
+\pagenumbering{roman}
+
+\input header.tex         % Use with caution -- may be conflicts. This file has priority higher than header, so delete conflicting lines in it, not here.
+
+\newcommand{\addref}[1]{\textbf{[\scalebox{.6}[1.0]{AddRef!}\footnote{#1}]}}
+\newcommand{\makelettrine}[1]{\lettrine[lines=3]{\color{black}\textbf{{\small\initfamily #1}}}{}}
 
 \geometry{left=3cm}
 \geometry{right=1.5cm}
@@ -37,19 +53,27 @@
 \renewcommand{\bibname}{Литература}
 
 \setlength{\parindent}{1cm}
-% \setstretch{1.5}
+\setstretch{1}
 
 \input title.tex
+
+\setstretch{1.5}
+
 \tableofcontents
 \newpage
+
+\pagenumbering{arabic}
+
 \input introduction.tex
-% \input lit_obzor.tex
 \input method.tex
 \input results.tex
-% \input inference.tex
 
-\addcontentsline{toc}{chapter}{Список литературы}
 
 \bibliographystyle{unsrt}
 \bibliography{base}
+\addcontentsline{toc}{chapter}{Список литературы}
+
+\input publications.tex
+
 \end{document}
+

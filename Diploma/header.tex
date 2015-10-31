@@ -1,28 +1,28 @@
 % based on http://www.dfcd.net/articles/latex/latex.html
 
 % \documentclass[a4paper,12pt]{report}
-% \usepackage[T2A]{fontenc}
+% \usepackage{cmap}               % seems to enable search in pdf
+% \usepackage[T1,T2A]{fontenc}    % for correct work with cyrillic letters
 % \usepackage[utf8]{inputenc}
 % \usepackage{amssymb,amsfonts}
 % \usepackage[fleqn]{amsmath}
 % \usepackage[russian,english]{babel}
 % \usepackage{anyfontsize}
 % \usepackage{graphicx}
-% \usepackage{fancyhdr}
-% \usepackage{cmap}
 % % \usepackage{times}
 % \usepackage{mathrsfs}
-% \usepackage[inline]{enumitem}
 % \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-% \setlength{\headheight}{15.2pt}
-% \renewcommand{\headrulewidth}{0pt}
-% \pagestyle{fancy}
 
 % \usepackage{geometry}
 % \geometry{left=2cm}
 % \geometry{right=1.5cm}
 % \geometry{top=1cm}
 % \geometry{bottom=2cm}
+
+% \usepackage{fancyhdr}   % must be loaded after geometry!
+% \setlength{\headheight}{15.2pt}
+% \renewcommand{\headrulewidth}{0pt}
+% \pagestyle{fancy}
 
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\const}{const}
@@ -66,18 +66,22 @@
 \newcommand{\grad}[1]{\operatorname{grad}\vec{#1}}
 
 \newcommand{\gradn}[1]{\vec{\nabla} #1} % for gradient
-\newcommand{\divn}[1]{\scalmult{\nabla}{#1}} % for divergence
-\newcommand{\rotn}[1]{\vecmult{\nabla}{#1}} % for curl
+\newcommand{\divn}[1]{\scmult{\nabla}{#1}} % for divergence
+\newcommand{\rotn}[1]{\vmult{\nabla}{#1}} % for curl
 
-\newcommand{\praiseme}[1]{\scalebox{.4}{ \textcircled{\scalebox{.5}{CC}} \textcircled{\scalebox{.5}{BY}} \textcircled{\scalebox{.5}{SA}} #1, \the\day.\the\month.\the\year}}
+\usepackage{scrtime}
+\newcommand{\praiseme}[1]{\scalebox{.4}{ \textcircled{\scalebox{.5}{CC}} \textcircled{\scalebox{.5}{BY}} \textcircled{\scalebox{.5}{SA}} #1, \the\day.\the\month.\the\year\textunderscore\thistime*}} % useful for copyright. Right there CC-BY-SA license
+
 \newcommand{\tobewritten}[0]{\textcolor{red}{\textsc{To be written}}}
-\newcommand{\NB}[0]{\addcontentsline{toc}{section}{NB!!!}\textbf{NB!}}
+\newcommand{\NB}[0]{\textbf{NB!}}
+\newcommand{\NBtoc}[0]{\addcontentsline{toc}{section}{NB!!!}\textbf{NB!}}   % also adds NB! to table of contents
 \newcommand{\Def}[0]{$\mathfrak{Def.}$}
 \newcommand{\Th}[0]{$\mathfrak{[Th.]}$}
 \newcommand{\Wiki}[0]{$\mathfrak{(Wiki)}$}
 
 \newcommand{\bbar}[1]{\bar{\bar{#1}}}
 
+% \usepackage[inline]{enumitem}
 % \makeatletter
 % \newcommand{\inlineitem}[1][]{
 %     \ifnum\enit@type=\tw@
