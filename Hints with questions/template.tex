@@ -1,0 +1,96 @@
+\RequirePackage{snapshot}
+\documentclass[11pt]{report}    % may be useful to add 'twocolumn'
+\usepackage{cmap}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsfonts}
+\usepackage[fleqn]{amsmath}
+\usepackage{mathrsfs}
+\usepackage[russian]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-10pt,nolistsep}
+
+\usepackage{chemfig}
+\setatomsep{25pt}
+
+\newcommand{\chck}[0]{\textcolor{red}{\textsc{\textbf{check!}}\qquad}}
+\newcommand{\idk}[0]{\textcolor{red}{\textbf{??!!}}\qquad}
+\newcommand{\Wiki}[0]{$\mathfrak{(Wiki)}$}
+
+\usepackage{scrtime}
+\newcommand{\praiseme}[1]{\scalebox{.4}{ \textcircled{\scalebox{.5}{CC}} \textcircled{\scalebox{.5}{BY}} \textcircled{\scalebox{.5}{SA}} #1, \the\day.\the\month.\the\year\textunderscore\thistime*}}
+
+\usepackage{geometry}
+\geometry{left=1cm}
+\geometry{right=1.5cm}
+\geometry{top=1cm}
+\geometry{bottom=2cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0mm}
+\fancyfoot[R]{\praiseme{Xtotdam}}
+
+\begin{document}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+
+\item \textbf{pH крови.}
+\begin{itemize}
+    \item 7.4
+\end{itemize}
+
+\item \textbf{Амплитуда колебаний атомов в белках.}
+\begin{itemize}
+    \item \chck 1.5 \AA
+\end{itemize}
+
+\item \textbf{Ароматические аминокислоты.}
+\begin{itemize}
+    \item Фенилаланин, тирозин, триптофан
+\end{itemize}
+
+\item \textbf{В каком порядке записывается последовательность нуклеотидов.}
+\begin{itemize}
+    \item Запись нуклеотидной последовательности производится в направлении от 5'-конца к 3'-концу.
+\end{itemize}
+
+\item \textbf{Вероятность диссоциации через pK и pH.}
+\begin{itemize}
+    \item $w^{\mp}=\frac1{1+10^{\pm(pK-pH)}}$
+\end{itemize}
+
+\item \textbf{\ldots}
+\begin{itemize}
+    \item \ldots
+\end{itemize}
+
+\item \textbf{Энергия изменения заряда группы.}
+\begin{itemize}
+    \item 2 $\div$ 3 ккал/моль
+\end{itemize}
+
+\item \textbf{Энергия одиночной ковалентной связи.}
+\begin{itemize}
+    \item 40 $\div$ 400 кДж/моль \Wiki
+\end{itemize}
+
+\item \textbf{Энергия проникновения заряда в неполярную среду.}
+\begin{itemize}
+    \item 20 $\div$ 30 ккал/моль
+\end{itemize}
+
+\item \textbf{Энергия, выделяющаяся при гидролизе одной молекулы АТФ.}
+\begin{itemize}
+    \item 30 кДж/моль (40 $\div$ 60 кДж/моль \Wiki)
+\end{itemize}
+
+
+\end{enumerate}
+\end{document}
