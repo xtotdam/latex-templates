@@ -1,5 +1,5 @@
 \RequirePackage{snapshot}
-\documentclass[11pt]{report}    % may be useful to add 'twocolumn'
+\documentclass[11pt,twocolumn]{report}
 \usepackage{cmap}
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,8 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{marvosym}
+\usepackage{tikz}
 
 \usepackage{enumitem}
 \setlist[itemize]{itemsep=-10pt,nolistsep}
@@ -22,8 +24,11 @@
 \newcommand{\idk}[0]{\textcolor{red}{\textbf{??!!}}\qquad}
 \newcommand{\Wiki}[0]{$\mathfrak{(Wiki)}$}
 
+\newcommand{\CCBYSA}[0]{\textcircled{\scalebox{.5}{CC}} \textcircled{\scalebox{.5}{BY}} \textcircled{\scalebox{.5}{SA}}}
+\newcommand{\MIT}[0]{MIT License}
+
 \usepackage{scrtime}
-\newcommand{\praiseme}[1]{\scalebox{.4}{ \textcircled{\scalebox{.5}{CC}} \textcircled{\scalebox{.5}{BY}} \textcircled{\scalebox{.5}{SA}} #1, \the\day.\the\month.\the\year\textunderscore\thistime*}}
+\newcommand{\praiseme}[1]{\scalebox{.4}{\MIT,~\copyright~#1, compiled \the\day.\the\month.\the\year\textunderscore\thistime}}
 
 \usepackage{geometry}
 \geometry{left=1cm}
@@ -45,51 +50,156 @@
 \begin{itemize}
     \item 7.4
 \end{itemize}
-
-\item \textbf{Амплитуда колебаний атомов в белках.}
-\begin{itemize}
-    \item \chck 1.5 \AA
-\end{itemize}
-
-\item \textbf{Ароматические аминокислоты.}
-\begin{itemize}
-    \item Фенилаланин, тирозин, триптофан
-\end{itemize}
-
-\item \textbf{В каком порядке записывается последовательность нуклеотидов.}
-\begin{itemize}
-    \item Запись нуклеотидной последовательности производится в направлении от 5'-конца к 3'-концу.
-\end{itemize}
-
-\item \textbf{Вероятность диссоциации через pK и pH.}
-\begin{itemize}
-    \item $w^{\mp}=\frac1{1+10^{\pm(pK-pH)}}$
-\end{itemize}
+%
+% From my own LaTeX experience
+% \pagebreak[0]     % please break the pa... nevermind
+% \pagebreak[1]     % it would be nice if break the page here kind sir?
+\pagebreak[2]       % why don't you break this page here? Thank you
+% \pagebreak[3]     % break the page
+% \pagebreak[4]     % Break! This! Fucking! Page! Right! There!
 
 \item \textbf{\ldots}
 \begin{itemize}
     \item \ldots
 \end{itemize}
+\pagebreak[2]
+
+\item \textbf{Закон Ламберта-Бугера-Бэра.}
+\begin{itemize}
+    \item $I(x) = I_0 e^{-\varepsilon Cx} = I_0 e^{-D}$
+    \item $dI = -\varepsilon C dx$
+
+    \begin{itemize}
+        \item $\varepsilon$ -- коэффициент экстинкции
+        \item $C$ -- концентрация
+        \item $l$ -- толщина слоя
+        \item $D = \varepsilon Cx$ -- оптическая плотность
+    \end{itemize}
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Изобразите пептидную связь.}
+\begin{itemize}
+    % \item \includegraphics[width=0.7\textwidth]{pept.png}
+    \item \chemfig{C(-[5])(=[3]O)-[0]\lewis{2:,N}(-[1])(-[7]H)}  % easter egg =)
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как называется реакция образования дисахарида.}
+\begin{itemize}
+    \item Конденсация
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как называется реакция расщепления дисахарида на  моносахариды.}
+
+\begin{itemize}
+    \item Гидролиз
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как называется связь, которую кофермент А образует с  переносимыми группами.}
+
+\begin{itemize}
+    \item Тиольная связь
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как называются нерастворимые молекулы крахмала.}
+\begin{itemize}
+    \item Амилопектин
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как называются растворимые молекулы крахмала.}
+\begin{itemize}
+    \item Амилоза
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как обозначается кофермент А.}
+\begin{itemize}
+    % \item \includegraphics[width=0.1\textwidth]{kA.png}
+    \item
+    \begin{tikzpicture}[scale=.3]
+        \path[draw, line width=.8] (0,-0.3)--(0,4)--(6.5,4)--(6.5,2)--(2,2)--(2,-0.3)--cycle;
+        \path[draw, line width=.8] (1,1.5) node[below]{A}--(1,3)--(5,3) node[right]{S};
+    \end{tikzpicture}
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Как определяется эффективный заряд молекулярной группы.}
+\begin{itemize}
+    \item $q^{\mp *} = \mp ew^{\mp}$
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Какая связь образуется между мономерами олигосахаридов.}
+\begin{itemize}
+    \item Гликозидная связь
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Какая часть общей длины ДНК отведена геному.}
+\begin{itemize}
+    % \item По последним данным в геноме человека содержится $30 \div 35$ тысяч генов. Интересно, что на их долю приходится только \textbf{$\sim$3\% общей длины} молекулы ДНК. Функциональная роль остальных 97\% протяженности ДНК остается пока, в значительной степени, загадкой.
+    \item $\sim$3\% общей длины
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{\ldots}
+\begin{itemize}
+    \item \ldots
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Энергия C-C связи.}
+\begin{itemize}
+    \item $\sim$ 350 кДж/моль
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Энергия Ван-Дер-Ваальсовой связи.}
+\begin{itemize}
+    \item $\sim$ 0.5 кДж/моль
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Энергия водородной связи.}
+\begin{itemize}
+    \item $\sim$ 3 кДж/моль
+\end{itemize}
+\pagebreak[2]
+
+\item \textbf{Энергия денатурации белка.}
+\begin{itemize}
+    \item $\sim$ 40 кДж/моль
+\end{itemize}
+\pagebreak[2]
 
 \item \textbf{Энергия изменения заряда группы.}
 \begin{itemize}
     \item 2 $\div$ 3 ккал/моль
 \end{itemize}
+\pagebreak[2]
 
 \item \textbf{Энергия одиночной ковалентной связи.}
 \begin{itemize}
     \item 40 $\div$ 400 кДж/моль \Wiki
 \end{itemize}
+\pagebreak[2]
 
 \item \textbf{Энергия проникновения заряда в неполярную среду.}
 \begin{itemize}
     \item 20 $\div$ 30 ккал/моль
 \end{itemize}
+\pagebreak[2]
 
 \item \textbf{Энергия, выделяющаяся при гидролизе одной молекулы АТФ.}
 \begin{itemize}
     \item 30 кДж/моль (40 $\div$ 60 кДж/моль \Wiki)
 \end{itemize}
+\pagebreak[2]
 
 
 \end{enumerate}
